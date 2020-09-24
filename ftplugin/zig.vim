@@ -24,11 +24,6 @@ if has('comments')
     setlocal commentstring=//\ %s
 endif
 
-if has('find_in_path')
-    let &l:includeexpr='substitute(v:fname, "^([^.])$", "\1.zig", "")'
-    let &l:include='\v(\@import>|\@cInclude>|^\s*\#\s*include)'
-endif
-
 let &l:define='\v(<fn>|<const>|<var>|^\s*\#\s*define)'
 
 if exists("*json_decode") && executable('zig')

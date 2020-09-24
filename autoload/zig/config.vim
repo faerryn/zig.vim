@@ -34,6 +34,14 @@ function! zig#config#FmtExperimental() abort
   return get(g:, "zig_fmt_experimental", 0)
 endfunction
 
+function! zig#config#IncludeSearch() abort
+  return get(g:, "zig_include_search", 0)
+endfunction
+
+function! zig#config#SetIncludeSearch(value) abort
+  let g:zig_include_search = a:value
+endfunction
+
 function! zig#config#Debug() abort
   return get(g:, 'zig_debug', [])
 endfunction

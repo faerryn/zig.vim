@@ -163,4 +163,15 @@ function! zig#fmt#ToggleFmtAutoSave() abort
   call zig#util#EchoProgress("auto fmt enabled")
 endfunction
 
+function! zig#fmt#ToggleIncludeSearch() abort
+  if zig#config#IncludeSearch()
+    call zig#config#SetIncludeSearch(0)
+    call zig#util#EchoProgress("include search disabled")
+    return
+  end
+
+  call zig#config#SetIncludeSearch(1)
+  call zig#util#EchoProgress("include search enabled")
+endfunction
+
 " vim: sw=2 ts=2 et
